@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        //1.$.each()
+        var obj = {
+            name : "Tom",
+            setName : function(name){
+                this.name = name;
+            }
+        };
+        //当是数组，输出的就是下标和内容了
+        $.each(obj, function(key, value){
+            console.log(key + " " + value);
+        });
+        /*
+        * name Tom
+        * setName function(name){
+        *   this.name = name;
+        *  }
+        * */
+        //2.$.trim()
+        //3.$.type()
+        console.log($.type($)); //function
+
+        //4.$.isArray()
+        console.log($.isArray($('body'))); //false
+
+        //5.$.isFunction()
+        console.log($.isFunction($)); //true
+
+        //6.parseJSON(json)
+        var json = '{"name":"Tom", "age":12}'; //json对象：{}
+        // json 对象转成 js 对象
+        console.log($.parseJSON(json)); //Object { name: "Tom", age: 12 }
+        // js 中的原生的方法 eval 需要在 json 字符串前后加上一对 小括号
+        console.log(eval("(" + json + ")")); //Object { name: "Tom", age: 12 }
+        json = '[{"name":"Tom", "age":12}, {"name":"Tom", "age":12}]'; // json 的数组 []
+        // json数组 ===> js数组
+        console.log($.parseJSON(json));
+        /*
+        * 0: Object { name: "Tom", age: 12 }
+         1: Object { name: "Tom", age: 12 }
+         length: 2
+         */
+        //常用的还是 json 的方法
+        // JSON.parse(jsonString)  json 字符串 --> js 对象/数组
+        // JSON.stringify(jsObj/jsArr)  js 对象/数组 --> 字符串
+    </script>
+</head>
+<body>
+
+</body>
+</html>

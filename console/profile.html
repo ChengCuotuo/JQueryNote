@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function All ( ) {
+            for (var i = 0; i < 10; i++) {
+                funcA(100);
+            }
+            funcB(1000);
+        }
+        function funcA (count)    {
+            for (var i = 0; i < count; i++) { }
+        }
+        function funcB (count)    {
+            for (var i = 0; i < count; i++) { }
+        }
+        console.profile();
+        All();
+        console.profileEnd();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

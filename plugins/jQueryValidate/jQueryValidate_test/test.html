@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="jquery.validate.js"></script>
+    <script type="text/javascript">
+        /*
+         * 声明式验证：程序员只需要声明各种验证规则，可以自定义验证失败的提示信息
+         * */
+        //对表单开启验证
+        // 通过表单的 name 属性确定表单项，
+        //验证的规则放在 rules 中，验证的提示信息放在messages中
+        // ruls 和 messages 的信息都是以 json 的格式
+        //产生的提示信息，是在表单的标签中添加一个 error 属性，并赋给指定的错误信息。
+
+
+        $(function(){
+            $('#myform').validate({
+                messages:{
+                    username:{
+                        required:'请输入用户名',
+                        minlength:'用户名长度不得小于6'
+                    },
+                    pwd1:{
+                        required:'请输入密码',
+                        minlength:'密码长度需大于6',
+                        maxlength:'密码长度需小于8'
+                    },
+                    pwd2:{
+                        equalTo:'和密码框中密码不相同'
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <form id="myform" action="xxxx">
+        <p>用户名(必须，最小6位)：<input name='username' type="text" required minlength="6"/></p>
+        <p>密码(必须，6到8位)：<input name="pwd1" id="password" type="password" required minlength="6" maxlength="8"/></p>
+        <p>确认密码(与密码相同)：<input name="pwd2" type="password" equalTo="#password"/></p>
+        <!--equalTo 是通过选择器查找的-->
+        <p><input id="submit" type="submit" value="确认"/></p>
+    </form>
+</body>
+</html>

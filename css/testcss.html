@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //得到一个 p 标签的颜色
+            //console.log($('p:first').css('color'));
+            //设置所有 p 标签的文本颜色为 red
+            //$('p').css('color', 'red');
+            //设置第 2 个 p 的字体颜色(#ff0011),背景色（blue）宽（300px）高（30px）
+            //修改的东西比较多，使用一个对象进行更新
+            $('p:eq(1)').css({
+                color:'#ff0011',
+                background:'blue',
+                width:'300px',
+                height:'30px'
+            });
+            /*
+             * p.style.color='#ff0011';
+             * p.style.background='blue';
+             * p.style.height=300px;
+             * p.style.width=30px;
+             * */
+        })
+    </script>
+</head>
+<body>
+    <p style="color: blue;">尚硅谷的后裔</p>
+    <p style="color: green;">太阳的后裔</p>
+</body>
+</html>

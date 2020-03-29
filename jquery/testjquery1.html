@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        //点击按钮确定显示文本框中先添加一个文本框
+        //参数是幻术：当 DOM 加载完成后，执行此回调函数
+        $(function(){   //绑定的文本加载完成的监控
+            $('#btn').click(function(){ //绑定按钮的点击事件监听
+                //事件函数回调的 this 是发生事件的 dom 元素，也就是 <button>
+                alert("DOM对象：" + this.innerHTML);
+                // 参数是 dom 对象，会将其包装成 jQuery 对象，此时可以使用 jQuery 对象的方法
+                alert("jQuery对象：" + $(this).html()); //读写合一，传递的参数，就是设置的内容
+                //参数是 html 标签字符串，创建标签对象并封装成 jQuery 对象
+                $('<input type="text" id="info"/><br />').appendTo($('div'))
+            })
+        })
+
+        //遍历输出数组中的所有的元素
+        var arr = [2, 4, 7];
+        //1.$.each() : 隐士遍历数组
+        $.each(arr, function(index, element){
+            alert(index + " " + element);
+            /**
+             * 0 2
+             * 1 4
+             * 2 7
+             */
+        });
+
+        // $.trim() ： 去除两边的空格
+        var str = ' my name is nianzuochen  ';
+        console.log("--" + str.trim() + "--");// --my name is nianzuochen--
+        console.log("--" + $.trim(str) + "--");// --my name is nianzuochen--
+    </script>
+</head>
+<body>
+    <div>
+        <button id="btn">确定</button><br />
+        <input type="text" id="info"/><br />
+    </div>
+</body>
+</html>

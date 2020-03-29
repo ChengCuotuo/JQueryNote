@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#data>tbody>tr:odd').css("background","#cccf");
+        })
+    </script>
+</head>
+<body>
+    <table id="data" border="1px">
+        <thead>
+            <tr>
+            <td>姓名</td>
+            <td>工资</td>
+            <td>入职时间</td>
+            <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tom</td>
+            <td>$3500</td>
+            <td>2010-10-25</td>
+            <td><a href="delete1" value="删除">删除</a></td>
+        </tr>
+        <tr>
+            <td>Marry</td>
+            <td>$3400</td>
+            <td>2010-12-1</td>
+            <td><a href="delete2" value="删除">删除</a></td>
+        </tr>
+        <tr>
+            <td>King</td>
+            <td>$3900</td>
+            <td>2010-08-17</td>
+            <td><a href="delete3" value="删除">删除</a></td>
+        </tr>
+        <tr>
+            <td>Scatt</td>
+            <td>$5900</td>
+            <td>2010-11-17</td>
+            <td><a href="delete4" value="删除">删除</a></td>
+        </tr>
+        <tr>
+            <td>Smith</td>
+            <td>$3100</td>
+            <td>2014-01-27</td>
+            <td><a href="delete5" value="删除">删除</a></td>
+        </tr>
+        <tr>
+            <td>Allen</td>
+            <td>$3700</td>
+            <td>2011-15-05</td>
+            <td><a href="delete6" value="删除">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //1.ul下li标签的第一个
+            var $lis = $('ul>li');
+            //$lis.first().css('background', 'red'); // 得到的是jQuery的第一个对象
+            //$lis.eq(0).css('background', 'red'); //和 first 等效
+            //$('ul>li:first').css('background', 'red'); //得到的是一个 jQuery 元素
+            //$lis[0].style.background='red';    //得到的是一个 DOM 元素
+
+            //2.ul 下 li 标签的最后一个
+            //$lis.last().css('background', 'red');
+
+            //3.ul 下 li 标签的第二个
+            //$lis.eq(1).css('background', 'red');
+
+            //4.ul 下 li 标签中title属性为hello的
+            //$lis.filter('[title=hello]').css('background', 'red');
+
+            //5.ul 下 li 标签中title属性不为hello的
+            //$lis.filter('[title!=hello]').css('background', 'red');
+            //$lis.not('[title=hello]').css('background', 'red');
+
+            //6.ul 下 li 标签中有title属性但是不为hello的
+            //$lis.filter('[title][title!=hello]').css('background', 'red');
+
+            //7.ul 下 li 标签中span子标签
+            $lis.has('span').css('background', 'red');
+        })
+
+    </script>
+</head>
+<body>
+<ul>
+    <li>AAAAA</li>
+    <li title="hello" class="box2">BBBBB</li>
+    <li class="box">CCCCC</li>
+    <li title="hello">DDDDDD</li>
+    <li title="two"><span>BBBBB</span></li>
+</ul>
+<li>eeeee</li>
+<li>EEEEE</li>
+<br>
+</body>
+</html>

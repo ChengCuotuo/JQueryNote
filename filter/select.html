@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //1.ul标签的第2个span子标签
+            var $ul = $('ul');
+            //$ul.children('span:eq(1)').css('background', 'red');
+            //<span>span文本3</span>  这个是它的第二个子标签
+
+            //2.ul标签的第2个后代标签
+            //$ul.find('span:eq(1)').css('background', 'red');
+            //<span>span文本2</span> 这个是它的第二个后代（子孙）标签
+
+            //3.ul标签的父标签
+            //$ul.parent().css('background', 'red');
+
+            //4.id为cc的li标签的前面的所有的li标签
+            var $li = $('#cc');
+            //$li.prevAll('li').css('background', 'red');
+
+            //5.id为cc标签的所有的兄弟li标签
+            $li.siblings('li').css('background', 'red');
+        })
+    </script>
+</head>
+<body>
+<div id="div1" class="box" title="one">class为box的div1</div>
+<div id="div2" class="box">class为box的div2</div>
+<div id="div3">div3</div>
+<span class="box">class为box的span</span>
+<br/>
+<div>
+    <ul>
+        <span>span文本1</span>
+        <li>AAAAA</li>
+        <li title="hello" class="box2">BBBBB</li>
+        <li class="box" id='cc'>CCCCC</li>
+        <li title="hello">DDDDDD</li>
+        <li title="two"><span>span文本2</span></li>
+        <span>span文本3</span>
+    </ul>
+    <span>span文本444</span><br>
+    <li>eeeee</li>
+    <li>EEEEE</li>
+    <br>
+</div>
+</body>
+</html>

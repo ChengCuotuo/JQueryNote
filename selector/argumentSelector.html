@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //1.选中 ul 下面的所有的 span，有三个 <span>
+            //$('ul span').css('background', 'yellow');
+
+            //2.选中 ul 下所有的子元素 span，最后一个<span>
+            //$('ul>span').css('background', 'yellow');
+
+            //3.选中 class=box 的下一个li
+            //$('.box + li').css('background', 'yellow');
+
+            //4.选中 ul 下的class=box元素后面的所有兄弟元素
+            $('ul .box~*').css('background', 'yellow');
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>AAAAAA</li>
+        <li class="box">CCCCCC</li>
+        <li title="hello"><span>BBBBBB</span></li>
+        <li title="hello"><span class="box">DDDDDD</span></li>
+        <span>EEEEEE</span>
+    </ul>
+</body>
+</html>

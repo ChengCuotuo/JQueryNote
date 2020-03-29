@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+       $(function(){
+           /*
+           *  1.内容尺寸
+           *  width() : width
+           *  height() : height
+           * */
+           var $div = $('div');
+           console.log($div.width(), $div.height()); // 100 150
+           /*
+           * 2.获取内部尺寸
+           * innerWidth() : width+padding
+           * innerHeight() : height+padding
+           * */
+           console.log($div.innerWidth(), $div.innerHeight()); // 120 170
+
+           /*
+           * 3.外部尺寸
+           * outerWidth(false/true) : width+padding+border 如果为true加上margin
+           * outerHeight(false/true) : height+padding+border 如果为true加上margin
+           * */
+           console.log($div.outerWidth(), $div.outerHeight()); // 140 190
+           console.log($div.outerWidth(true), $div.outerHeight(true)); // 160 210
+       })
+    </script>
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 150px;
+            background: red;
+            padding: 10px;
+            border: 10px #fbd850 solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+   <div>div</div>
+</body>
+</html>

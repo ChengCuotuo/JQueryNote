@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //统计一共有多少个按钮
+            // jQuery对象的前面一般加上一个 $
+            var $buttons = $('button');
+            console.log($buttons.length + " " + $buttons.size()); // 4  4
+            //取出第二个button，取得的是元素 .val() 是针对jQuery对象的
+            console.log($buttons.get(1).innerHTML + " " + $buttons[1].innerHTML); // 测试二 测试二
+            //列出所有 button 标签的文本
+            $buttons.each(function(index, domEle){
+                console.log(index , domEle.innerHTML, this);
+                //这里面的 this 其实就是 domEle 对象，$buttons 中每一个对象
+                /**
+                 * 0 测试一
+                 * 1 测试二
+                 * 2 测试三
+                 * 3 测试四
+                 */
+            });
+            //这里面的 this 其实就是 $buttons 中每一个对象
+            $buttons.each(function(){
+                console.log(this.innerHTML);
+            });
+
+            //输出测试三按钮是所有测试按钮中的第几个
+            console.log($('#btn3').index()); // 2
+
+            console.log($buttons instanceof Array); //false
+            // 自定义一个伪数组
+            var weiArray = {};
+            weiArray.length = 0;
+            weiArray[0] = "qiqihaer";
+            weiArray.length = 1;
+            weiArray[1] = "123";
+            weiArray.length = 2;
+            for (var i = 0; i < weiArray.length; i++){
+                console.log(i,weiArray[i]);
+                /*
+                * 0 qiqihaer
+                * 1 123
+                * */
+            }
+            console.log(weiArray.forEach, $buttons.forEach); // undefined undefined
+        })
+    </script>
+</head>
+<body>
+    <button>测试一</button>
+    <button>测试二</button>
+    <button id="btn3">测试三</button>
+    <button>测试四</button>
+</body>
+</html>

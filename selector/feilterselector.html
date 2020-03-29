@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+       $(function(){
+           //1.选择第一个 div，在文档中选择器下面的 基本
+           //$('div:first').css({"background":"red"});
+
+           //2.选择最后一个 class 为 box 的元素
+           //$('.box:last').css({"background":"red"});
+
+           //3.选择所有 class 不为 box 的 div，没有 class 属性也可以
+           //$('div:not(.box)').css({"background":"red"});
+
+           //4.选择第二个和第三个li，gt()大于，lt() 小于
+           //注意这里的选择器并不是同步执行的，也就是说在执行完 get(0) 之后，匹配到后五个元素
+           //此时原来的第三个变成了第二个
+           //$('li:gt(0):lt(2)').css({"background":"red"});
+           //可以先执行小于 lt(3)，取出前三个，在执行 gt(0),就可以取出第二个和第三个（下标永远从0开始）
+           //$('li:lt(3):gt(0)').css({"background":"red"});
+           //可以看出多个过滤选择器是依次执行的，上一次执行的结果是下一次执行初始元素集
+
+           //5.选择内容为BBBBB的li，在文档中选择器的 内容
+           //$('li:contains("BBBBB")').css({"background":"red"});
+
+            //6.选择隐藏的 li，返回的是一个 jQuery 对象伪数组
+            //在文档中选择器的 可见性
+            //console.log($('li:hidden').length, $('li:hidden')[0]);
+            //console.log($('li:hidden').html());
+
+           //7.选择所有属性 title 为 hello 的元素，在文档中选择器的 属性
+           $('li[title="hello"]').css({"background":"red"});
+       })
+    </script>
+</head>
+<body>
+    <div id="div1" class="box">class为box的div1</div>
+    <div id="div2" class="box">class为box的div2</div>
+    <div id="div3">div3</div>
+    <span class="box">class为box的span</span>
+    <br >
+    <ul>
+        <li>AAAAA</li>
+        <li title="hello">BBBBB</li>
+        <li class="box">CCCCC</li>
+        <li title="hello">DDDDD</li>
+        <li title="two">BBBBB</li>
+        <li style="display:none">我本来是隐藏的</li>
+    </ul>
+</body>
+</html>

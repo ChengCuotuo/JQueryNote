@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //1.点击li 背景就会变成红色
+            //2.点击btn1就添加一个li
+            var $lis = $('ul>li');
+            $lis.click(function(){
+                //$(this).css('background', 'red');
+                this.style.background = 'red';
+            })
+
+            $('#btn').click(function(){
+                //alert(123);
+                //$('ul').append('<li>新添加的li标签</li>');
+                $('<li>新添加的li标签</li>')
+                        .appendTo('ul')
+                        .click(function(){
+                            $(this).css('background', 'red');
+                        });
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="ha">
+        <li>11111</li>
+        <li>1111111</li>
+        <li>111111111</li>
+        <li>11111111111</li>
+    </ul>
+
+    <li>22222</li>
+    <br>
+    <button id="btn">添加新的li</button>
+    <br>
+</body>
+</html>

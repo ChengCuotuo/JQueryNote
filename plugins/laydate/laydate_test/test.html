@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="laydate.js"></script>
+</head>
+<body>
+    <!--laydate()是一个回调函数，当点击之后调用-->
+    <input placeholder="请输入日期" class="laydate-icon" onclick="laydate()">
+    <input class="laydate-icon" id="demo" value="2014-6-25更新">
+    <script>
+        //匿名函数自调用
+        ;!function(){
+            //添加皮肤，修改颜色
+            laydate.skin('molv');
+            laydate({
+                elem: '#demo'
+            })
+
+        }();
+    </script>
+    <div id="test1" class="laydate-icon"></div>
+    <script>
+        laydate({ //配置对象
+            elem:'#test1',
+            format:'YYYY/MM', //分隔符可以任意指定，钙离子表示显示年月
+            festival : true, //显示节日
+            choose:function(dates){ //选择日期完毕的回调
+                alert('得到' + dates);
+            }
+        })
+    </script>
+
+    <div id="hello3" class="laydate-icon" ></div>
+<script>
+    //限定可选时间，下面表示只能选择今天，昨天和后天
+    laydate({
+        elem:'#hello3',
+        min:laydate.now(-1), // -1 代表昨天，-2代表前天，以次类推
+        max:laydate.now(+1) //+1代表明天，+2代表后天，依次类推
+    });
+</script>
+</body>
+</html>

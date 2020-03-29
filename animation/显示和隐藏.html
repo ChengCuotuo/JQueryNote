@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+显示隐藏，默认没有动画, 动画(opacity/height/width)，三者都在改变，左上角的位置时固定的
+1. show(): (不)带动画的显示
+2. hide(): (不)带动画的隐藏
+3. toggle(): (不)带动画的切换显示/隐藏
+-->
+    <script src="jquery-1.12.3.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var $div = $('.div1');
+            $('#btn1').click(function(){
+                $div.show();  // 没有动画
+            });
+
+            $('#btn2').click(function(){
+                $div.show(3000);
+            });
+
+            $('#btn3').click(function(){
+                $div.hide(3000);
+            });
+
+            $('#btn4').click(function(){
+                $div.toggle(3000);
+            });
+        })
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+        }
+
+        .div1 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 10px;
+            background: red;
+            display: none;
+        }
+    </style>
+<body>
+<button id="btn1">瞬间显示</button>
+<button id="btn2">慢慢显示</button>
+<button id="btn3">慢慢隐藏</button>
+<button id="btn4">显示隐藏切换</button>
+
+<div class="div1">
+</div>
+
+</body>
+</html>
